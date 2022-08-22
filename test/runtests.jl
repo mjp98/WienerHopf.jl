@@ -104,12 +104,12 @@ end
 
     @test cauchy(v,0.0+10eps()im) + γ(0.0)*Dm(0.0) ≈ Φdp(0.0) + γ(0.0)*Dm(0.0) ≈ -k*sin(θ₀)/(0.0-k*cos(θ₀))
 
-    #@test (Cm*v.coefficients)[50] ≈ cauchy(v,pts[50]-100eps()im)
-    #@test (Cp*v.coefficients)[50] ≈ cauchy(v,pts[50]+100eps()im)
+    @test_broken (Cm*v.coefficients)[50] ≈ cauchy(v,pts[50]-100eps()im)
+    @test_broken (Cp*v.coefficients)[50] ≈ cauchy(v,pts[50]+100eps()im)
 
-    idx = 50
-    @test_broken (Cm*v.coefficients)[idx-1] ≈ cauchy(v,pts[idx]-100eps()*1im)
-    @test_broken (Cp*v.coefficients)[idx-1] ≈ cauchy(v,pts[idx]+100eps()*1im)
+    # idx = 50
+    # @test_broken (Cm*v.coefficients)[idx-1] ≈ cauchy(v,pts[idx]-100eps()*1im)
+    # @test_broken (Cp*v.coefficients)[idx-1] ≈ cauchy(v,pts[idx]+100eps()*1im)
 
 
     L = Diagonal(inv.(γ.(pts[2:end-1])))*Cp .+ Cm
