@@ -10,9 +10,9 @@ ForwardDiff = "f6369f11-7733-5829-9624-2563aa707210"
 RiemannHilbert = "79305c5b-9889-52e9-bdbd-56f883c71fe0"
 SingularIntegralEquations = "e094c991-5a90-5477-8896-c1e4c9552a1a"
 
-[compat]
-ApproxFun = "0.11.8"
-ForwardDiff = "0.10"
-RiemannHilbert = "0.1"
-SingularIntegralEquations = "0.6"
-julia = "1.3"
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+
+[targets]
+test = ["Test", "LinearAlgebra"]
